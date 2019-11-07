@@ -13,13 +13,13 @@ describe('createSharedState', () => {
     expect(value).toBe(undefined);
   });
 
-  it('returns initial state', () => {
+  it('returns initial value', () => {
     const { result } = render('initial value');
     const [value] = result.current;
     expect(value).toBe('initial value');
   });
 
-  it('returns set state', () => {
+  it('returns set value', () => {
     const { result } = render('initial value');
     const [, setValue] = result.current;
 
@@ -30,7 +30,7 @@ describe('createSharedState', () => {
     expect(value).toBe('set value');
   });
 
-  it('returns set state in other component', () => {
+  it('returns set value in other component', () => {
     const useSharedState = createSharedState('initial value');
     const { result: resultA } = renderHook(() => useSharedState());
     const { result: resultB } = renderHook(() => useSharedState());
