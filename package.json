@@ -23,7 +23,8 @@
   },
   "scripts": {
     "test": "jest",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "typecheck": "tsc"
   },
   "repository": {
     "type": "git",
