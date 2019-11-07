@@ -1,0 +1,47 @@
+{
+  "name": "react-create-shared-state",
+  "version": "0.0.1",
+  "description": "useState but with shared state across components",
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/preset-env": "^7.7.1",
+    "@testing-library/jest-dom": "^4.2.3",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@types/jest": "^24.0.22",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^2.0.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-test-renderer": "^16.11.0",
+    "typescript": "^3.7.2"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mucsi96/react-create-shared-state.git"
+  },
+  "keywords": [
+    "react",
+    "hook",
+    "useState",
+    "shared"
+  ],
+  "author": "Igor Mucsicska",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mucsi96/react-create-shared-state/issues"
+  },
+  "homepage": "https://github.com/mucsi96/react-create-shared-state#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

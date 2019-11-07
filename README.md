@@ -1,2 +1,3 @@
 # react-create-shared-state
-useState but with shared state across components
+
+Reacts `useState` hook but with shared state across components.
