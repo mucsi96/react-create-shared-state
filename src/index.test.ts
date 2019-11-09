@@ -42,4 +42,36 @@ describe('createSharedState', () => {
 
     expect(value).toBe('set value from A');
   });
+
+  it('doesn`t set value in other component after unmount', () => {
+    const useSharedState = createSharedState('initial value');
+    const { result: resultA } = renderHook(() => useSharedState());
+    const { result: resultB, unmount: unmountB } = renderHook(() => useSharedState());
+    const [, setValue] = resultA.current;
+
+    unmountB();
+
+    act(() => setValue('set value from A'));
+
+    const [value] = resultB.current;
+
+    expect(value).toBe('initial value');
+  });
+
+  it('keeps the value after unmounting all hooks', () => {
+    const useSharedState = createSharedState('initial value');
+    const { result: resultA, unmount: unmountA } = renderHook(() => useSharedState());
+    const { unmount: unmountB } = renderHook(() => useSharedState());
+    const [, setValue] = resultA.current;
+
+    act(() => setValue('set value from A'));
+
+    unmountA();
+    unmountB();
+
+    const { result: resultC } = renderHook(() => useSharedState());
+    const [value] = resultC.current;
+
+    expect(value).toBe('set value from A');
+  });
 });

@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 
-export function createSharedState<ValueType>(initialState: ValueType) {
+export function createSharedState<ValueType>(defaultValue: ValueType) {
   type TListener = (value: ValueType) => void;
 
   const listeners: TListener[] = [];
+  let backupValue = defaultValue;
 
   return (): [ValueType, React.Dispatch<React.SetStateAction<ValueType>>] => {
-    const [value, setValue] = useState<ValueType>(initialState);
+    const [value, setValue] = useState<ValueType>(backupValue);
 
     useEffect(() => {
+      backupValue = value;
       listeners.forEach(listener => listener !== setValue && listener(value));
     }, [value]);
 
