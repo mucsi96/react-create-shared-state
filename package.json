@@ -1,6 +1,6 @@
 {
   "name": "react-create-shared-state",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "useState but with shared state across components",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
