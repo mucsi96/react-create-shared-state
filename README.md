@@ -5,7 +5,11 @@
 
 Reacts `useState` hook but with shared state across components.
 
-# Usage
+## Side-by-side comparison with Context API
+
+![image](https://user-images.githubusercontent.com/3163392/68534701-aedc9e00-0337-11ea-89c3-7eed540f23cd.png)
+
+## Usage
 
 [Demo](https://codesandbox.io/s/react-create-shared-state-demo-9s9ui)
 
