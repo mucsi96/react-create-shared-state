@@ -4,7 +4,7 @@
 [![Build Status](https://github.com/mucsi96/react-create-shared-state/workflows/Build/badge.svg)](https://github.com/mucsi96/react-create-shared-state/actions?query=workflow%3ABuild+branch%3Amaster)
 
 This package allows sharing data between components with hooks. In many cases leads to more simple implementation compared to Context API.
-`createSharedState` creates a hook very similar to `useState` but with sync state across the application. Setting a value in one component will result re-rendering every component which uses the same hook.
+`createSharedState` creates a hook very similar to `useState` but with sync state across hook instances. Setting a value in one component will result re-rendering every component which uses the same hook.
 
 ## Side-by-side comparison with Context API
 
