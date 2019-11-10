@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 export function createSharedState<ValueType>(defaultValue: ValueType) {
   type TListener = (value: ValueType) => void;
 
-  const listeners: TListener[] = [];
+  const listeners: Set<TListener> = new Set();
   let backupValue = defaultValue;
 
   return (): [ValueType, React.Dispatch<React.SetStateAction<ValueType>>] => {
@@ -15,12 +15,8 @@ export function createSharedState<ValueType>(defaultValue: ValueType) {
     }, [value]);
 
     useEffect(() => {
-      listeners.push(setValue);
-
-      return () => {
-        const index = listeners.findIndex(listener => listener === setValue);
-        listeners.splice(index, 1);
-      };
+      listeners.add(setValue);
+      return () => listeners.delete(setValue);
     }, []);
 
     return [value, setValue];
