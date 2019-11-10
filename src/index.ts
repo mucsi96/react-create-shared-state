@@ -16,7 +16,9 @@ export function createSharedState<ValueType>(defaultValue: ValueType) {
 
     useEffect(() => {
       listeners.add(setValue);
-      return () => listeners.delete(setValue);
+      return () => {
+        listeners.delete(setValue);
+      };
     }, []);
 
     return [value, setValue];

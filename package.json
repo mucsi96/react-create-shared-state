@@ -1,6 +1,6 @@
 {
   "name": "react-create-shared-state",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "useState but with shared state across components",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -33,7 +33,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "npm run test -- --watch",
-    "typecheck": "tsc",
+    "typecheck": "tsc --noemit",
     "clean": "del-cli lib",
     "build:declarations": "tsc --emitDeclarationOnly -p tsconfig.build.json --outDir lib",
     "build:compile": "babel src --out-dir lib --extensions \".ts\" --ignore \"**/*.test.ts\"",
